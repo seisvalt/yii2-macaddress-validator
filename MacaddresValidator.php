@@ -4,11 +4,10 @@
  * Yii2 MAC-address Validator
  * 
  * @link https://github.com/seisvalt/yii2-macaddress-validator
- * @license https://github.com/seisvalt/yii2-macaddress-validator/blob/master/LICENSE MIT
- * @author Vladimir Korovin <jose.vargas@mingenio.com>
+ * @license https://github.com/seisvalt/yii2-macaddress-validator/LICENSE MIT
  */
 
-namespace vakorovin\yii2_macaddress_validator;
+namespace seisvalt\yii2_macaddress_validator;
 
 use yii\validators\Validator;
 
