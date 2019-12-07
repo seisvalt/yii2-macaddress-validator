@@ -1,0 +1,58 @@
+
+#Validador de direcciones MAC Yii2
+
+### Descripción
+
+Esta extensión introduce un nuevo tipo de datos para su proyecto Yii2: la dirección MAC.
+La validación ocurre tanto en el lado del cliente como en el servidor.
+
+### Formatos de dirección MAC válidos
+
+Por el momento, el validador considera válidos los siguientes formatos de dirección MAC:
+
+    AA:BB:CC:DD:EE:FF
+    AA-BB-CC-DD-EE-FF
+    AA BB CC DD EE FF
+
+    AABB.CCDD.EEFF
+    AABB CCDD EEFF
+
+    AABBCC DDEEFF
+    AABBCC-DDEEFF
+    AABBCC:DDEEFF
+
+    AABBCCDDEEFF
+
+
+* Nota: *
+- Los formatos anteriores se usan en un proyecto real y también son válidos para el tipo de datos maccaddr en PostgreSQL;
+- Aunque los ejemplos anteriores usan caracteres alfabéticos en mayúsculas, de hecho, el caso no es importante.
+
+### Instalación
+
+En la raíz de su proyecto en composer.json, en la sección "require", escriba:
+
+    "seisvalt/yii2-macaddress-validator": "dev-master"
+
+y luego ejecuta el comando:
+
+    php composer.phar install
+
+O ejecuta el comando:
+
+    php composer.phar requiere --prefer-dist seisvalt/yii2-macaddress-validator "dev-master"
+
+### Uso
+
+En el modelo, escriba:
+
+	use seisvalt\yii2_macaddress_validator\MacaddressValidator;
+
+    public function rules()
+    {
+        return [
+			...
+            [['mac'], MacaddressValidator::className()],
+			...
+		];
+	}
